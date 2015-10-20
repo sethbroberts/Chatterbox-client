@@ -43,12 +43,24 @@ var app = (function(){
   var addMessage = function(message) {
     var $chatWindow = $('#chats');
     var output = messageTemplate.replace('$username', message.username);
-    output = output.replace('$text', message.text);
+
+    if (message.username in friends) {
+      output = output.replace('$text', '<b>' + message.text + '</b>');
+    } else {
+      output = output.replace('$text', message.text);
+    }
+
     $chatWindow.append(output);
-    var $username = $('.username:first');
+    var $username = $('.username:last');
     // set event handler on $username, 2nd argument is event.data object
     // need 'this.addFriend' -> this will call the method of app instance, as opposed to just function
-    $username.on('click', { value: message.username }, app.addFriend).css('cursor', 'pointer');
+    $username.on('click', { value: message.username }, function(event) {
+      if (event.data.value in friends) {
+        delete friends[event.data.value];
+      } else {
+        app.addFriend(event);
+      }
+    }).css('cursor', 'pointer');
   };
 
   var addRoom = function(roomName) {
