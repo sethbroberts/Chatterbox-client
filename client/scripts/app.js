@@ -87,7 +87,7 @@ var app = (function(){
     app.send({
       username: username,
       text: text,
-      roomname: currentRoom
+      roomname: app.currentRoom
     });
 
     event.preventDefault();
