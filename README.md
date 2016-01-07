@@ -1,51 +1,35 @@
 Chatterbox client
 ==============
 
-This is a project I completed as a student at Hack Reactor. This project was worked on with a pair. During the project we built a chat client consuming some parse API. The final client app has been refactored with various libraries/frameworks, from jQuery, to Backbone and ES6.
+This is a project I completed as a student at Hack Reactor. I worked on this with one other person. During the project we built a chat client, making use of the parse API. 
 
 ## Structure:
 
-The repository consist of
+The repository consists of
 
 - jQuery app
-- backbone app
-- backbone ES6 app
 - test Specs files.
 
-#### Chatterbox app - Jquery version / Backbone version / BackboneES6 version
+#### Chatterbox app - Jquery version 
 
-The app allows the user to chose rooms and fetch/post messages from and to a parse based API backend.
+The app allows the user to chose rooms and fetch/post messages to and from a parse based API backend.
 
 ## Install:
 
-The project rely on bower for managing external libraries and dependencies, so be sure to first:
+The project relies on bower for managing external libraries and dependencies, so be sure to first:
 
 `bower install`
 
-to run it, simply open `./client/index<type>.html` with your browser.
-In particular:
-
-- `./client/indexJQuery.html`
-- `./client/indexBacknone.html`
-- `./client/indexBacknoneES6.html`
-
-Make sure to have a valid config.js inside the env folder.
+to run it, simply open `./client/index.html` with your browser.
 
 ### SpecRunner - mocha
 
-The specrunner contain both the tests for the client
-
-**Some code may be written in ES6 and may require to be transpiled in order to be tested**.
-
-### Requirements
-
-ES6 enabled on chrome `chrome://flags/#enable-javascript-harmony.`
-Babeljs.io for transipiling.
+The specrunner contains tests for the client
 
 ### Testing
 
 Tests are made with the [Mocha](https://github.com/mochajs/mocha) testing framework.
-Test are located in the ./spec directory. To run the Just open the spec runner file with chrome.
+Test are located in the ./spec directory. To run open the spec runner file with chrome.
 
 ```
 SpecRunner.html
